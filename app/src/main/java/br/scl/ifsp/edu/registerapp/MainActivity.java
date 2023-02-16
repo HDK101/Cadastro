@@ -67,5 +67,21 @@ public class MainActivity extends AppCompatActivity {
             Log.println(Log.ASSERT, "asd", registerData.toString());
             Toast.makeText(MainActivity.this, registerData.toString(), Toast.LENGTH_SHORT).show();
         });
+
+        Button clearButton = findViewById(R.id.clearButton);
+        clearButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                nameEdit.setText("");
+                phoneEdit.setText("");
+                emailEdit.setText("");
+                emailCheckbox.setChecked(
+                        false
+                );
+                sexRadioGroup.check(-1);
+                cityEdit.setText("");
+                estateSpinner.setSelection(0);
+            }
+        });
     }
 }
